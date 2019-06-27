@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HUMANS</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="user_creer_front.css">
+
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif; background: white;}
+    </style>
+
+</head>
+<body>
+    <div class="w3-container w3-row-padding">
+    <div class="w3-container w3-center">
+             <a href= "accueil_anonyme.php">
+                <img src="./assets/images/Humans_logo.png">
+            </a>
+    </div>
+            </p>
+                <form action="user_creer_back.php" style="border:1px solid #ccc" onsubmit="return f_valider()" method="post" class="bloc">
+                    
+                    <div class="w3-container" style="border:1px solid #ccc; background:white">
+
+                        <p>Choose your monster's features:szdefrghnj,k;,jgfbdcsqcdfghjkhgfdcsxsdfgh</p>
+
+                        <div>
+                            <input type="checkbox" id="scales" name="scales"checked>
+                            <label for="scales">Scales</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="horns" name="horns">
+                            <label for="horns">Horns</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="scales" name="scales"checked>
+                            <label for="scales">Scales</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="horns" name="horns">
+                            <label for="horns">Horns</label>
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+
+                <button class="valider">Valider</button>
+
+                    <?
+                        $_SESSION['page_suiv'] = 'question_2.php';
+                    ?>
+                    
+                    <?php
+$bdd = new PDO('mysql:host=localhost;dbname=project_end', 'root', '');
+
+if(isset($_POST['forminscription'])) {
+   $id = htmlspecialchars($_POST['id']);
+   $question = htmlspecialchars($_POST['question']);
+   $reponse = htmlspecialchars($_POST['reponse']);
+   $alerte = sha1($_POST['alerte']);
+}
+?>
+</body>
+</html>
